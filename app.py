@@ -1,12 +1,12 @@
-print ('Hola cazando apis')
+from flask import Flask
 
-import requests
-import json
+app = Flask(__name__)
 
-response = requests.get("https://swapi.dev/api/people/2")
 
-json_data = json.loads(response.text)
+@app.route('/')
+def hello():
+    return '<h1>Hello World</h1>'
 
-print (json.dumps(json_data,indent=4))
 
-print (json_data['name'])
+if __name__ == '__main__':
+    app.run('0.0.0.0', port=8080, debug=True)
