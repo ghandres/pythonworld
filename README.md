@@ -27,8 +27,7 @@ On Unix or MacOS, run:
 source tutorial-env/bin/activate
 
 (This script is written for the bash shell. If you use the csh or fish shells, there are alternate activate.csh and activate.fish scripts you should use instead.)
-
-Activating the virtual environment will change your shell’s prompt to show what virtual environment you’re using, and modify the environment so that running python will get you that particular version and installation of Python. 
+ 
 
 instalar las dependencias 
-pip install -r requirements.txt
+ # pip install -r requirements.txt
