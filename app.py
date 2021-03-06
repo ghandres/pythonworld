@@ -1,4 +1,5 @@
-from flask import Flask, url_for, request
+from flask import Flask,  request, make_response, abort, url_for, redirect, render_template
+from jinja2 import Template
 
 app = Flask(__name__)
 
@@ -6,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def welcome():
     print(url_for('welcome'))
-    return '<h1>Welcome</h1>'
+    return render_template('base.html', nombre="Andres")
 
 
 @app.route('/hello/')
@@ -24,6 +25,12 @@ def post():
         return "A la pantalla de inicio"
     else:
         return "Llega el formulario"
+
+
+@app.errorhandler(404)
+def error(error):
+    print(error)
+    return render_template("error.html", error=error)
 
 
 if __name__ == '__main__':
