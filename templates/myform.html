@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %} Mundo Post {% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h3>Página de trabajo de Flask</h3>
+    </div>
+</div>
+<div class="container">
+    <h2> Posteando {{nombre}} </h2>
+    <div style="background: red;">
+        {% for field, errors in form_usuario.errors.items() %}
+        {{form_usuario[field].label}}:{{','.join(errors)}}
+        {% endfor %}
+    </div>
+    <form action="{{url_for('posteando')}}" method="POST">
+        {{form_usuario.csrf_token}}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1">
+                    {{form_usuario.name.label()}}
+                </div>
+                <div class="col-lg-3">
+                    {{form_usuario.name()}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    {{form_usuario.edad.label()}}
+                </div>
+                <div class="col-lg-3">
+                    {{form_usuario.edad()}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    <span />
+                </div>
+                <div class="col-lg-3">
+                    {{form_usuario.submmit()}}
+                </div>
+            </div>
+        </div>
+</div>
+</form>
+
+</div>
+{% endblock content %}
