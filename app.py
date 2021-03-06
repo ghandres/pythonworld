@@ -1,7 +1,9 @@
 from flask import Flask,  request, make_response, abort, url_for, redirect, render_template
 from jinja2 import Template
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+Bootstrap(app)
 
 
 @app.route('/')
@@ -14,9 +16,9 @@ def welcome():
 @app.route('/hello/<string:name>')
 def hello(name=None):
     if name:
-        return render_template("welcome.html", nombre=name)
+        return render_template("hello.html", nombre=name)
     else:
-        return render_template("welcome.html", nombre='Desconocido')
+        return render_template("hello.html", nombre='Desconocido')
 
 
 @app.route('/posteando/', methods=['POST', 'GET'])
