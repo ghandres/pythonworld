@@ -1,0 +1,16 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for("static", filename='css/style.css')}}">
+{% endblock styles %}
+
+{% block html_attribs %} lang="es" {% endblock html_attribs %}
+
+{% block title %}{{error.name}}{% endblock title %}Pantalla de Bienvenida
+{% block content %}
+    <h1> Pagina no encontrada... oh, oh {{error.name}}</h1>
+    <h2> Info {{error.description}}</h2>
+    <h2> Info code {{error.code}}</h2>
+{% endblock content %}
+
+
