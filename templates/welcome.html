@@ -1,14 +1,9 @@
-{% extends "bootstrap/base.html" %}
-{% block styles %}
-    {{super()}}
-    <link rel="stylesheet" href="{{url_for("static", filename='css/style.css')}}">
-{% endblock styles %}
-   
-{% block html_attribs %} lang="es" {% endblock html_attribs %}
+{% extends "layout.html" %}
 
-{% block title %}Pantalla de Bienvenida {{nombre}} {% endblock title %}Pantalla de Bienvenida
+{% block title %}Pantalla de Bienvenida {{nombre}} {% endblock title %}
 {% block content %}
-    <h2> Bienvenido {{nombre}} </h2>
+
+    <h2> Bienvenido , Welcome {{nombre}} </h2>
 {% endblock content %}
 
 

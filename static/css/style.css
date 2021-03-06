@@ -1,3 +1,17 @@
 body {
     background: lightsalmon;
 }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li {
+    background: #1e7ee6;
+}
+
+.navbar {
+    color: #000;
+    background: rgb(11, 11, 71);
+}
