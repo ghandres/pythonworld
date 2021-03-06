@@ -1,17 +1,9 @@
-<!DOCTYPE html>
+{% extends 'layout.html' %}
+{% block title %}{{error.name}}{% endblock title %}Pantalla de Bienvenida
+{% block content %}
+    <h1> Pagina no encontrada... oh, oh {{error.name}}</h1>
+    <h2> Info {{error.description}}</h2>
+    <h2> Info code {{error.code}}</h2>
+{% endblock content %}
 
-<html lang=es>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Error tipo {{error.name}}</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <h1> Pagina no encontrada... oh, oh {{error.name}}</h1>
-        <h2> Info {{error.description}}</h2>
-        <h2> Info {{error.code}}</h2>
-    </body>
-</html>
+

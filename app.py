@@ -7,16 +7,16 @@ app = Flask(__name__)
 @app.route('/')
 def welcome():
     print(url_for('welcome'))
-    return render_template('base.html', nombre="Andres")
+    return render_template('welcome.html', nombre="Andres")
 
 
 @app.route('/hello/')
 @app.route('/hello/<string:name>')
 def hello(name=None):
     if name:
-        return f'<h1>Hello World {name} </h1>'
+        return render_template("welcome.html", nombre=name)
     else:
-        return '<h1>Hello Mundo Nada </h1>'
+        return render_template("welcome.html", nombre='Desconocido')
 
 
 @app.route('/posteando/', methods=['POST', 'GET'])
